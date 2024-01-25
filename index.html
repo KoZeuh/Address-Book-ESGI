@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carnet d'adresses</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet"/>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+
+        <style>
+            body {
+                background-image: url("https://storage.pixteller.com/designs/designs-images/2019-03-27/05/simple-background-backgrounds-passion-simple-1-5c9b95bd34713.png");
+                background-size: cover;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center mb-4 text-dark">Carnet d'adresses</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between">
+                            <h5 class="mb-0">Ajout/Edition d'un contact</h5>
+                            <button id="toggleForm" class="btn btn-success mb-3">Nouveau contact</button>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm" style="display:none;">
+                                <label for="gender" class="mt-2">Genre</label>
+                                <select name="gender" id="gender" class="form-select mt-2" required>
+                                    <option value="Monsieur">Monsieur</option>
+                                    <option value="Madame">Madame</option>
+                                    <option value="Mademoiselle">Mademoiselle</option>
+                                </select>
+
+                                <label for="firstName" class="mt-2">Prénom:</label>
+                                <input type="text" id="firstName" class="form-control mt-2" required>
+        
+                                <label for="lastName" class="mt-2">Nom:</label>
+                                <input type="text" id="lastName" class="form-control mt-2" required>
+        
+                                <label for="phone" class="mt-2">Téléphone:</label>
+                                <input type="tel" id="phone" class="form-control mt-2" required>
+        
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="saveContact" class="btn btn-primary mt-4">Enregistrer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card table-responsive">
+                        <div class="card-header">
+                            <h5 class="mb-0 text-center">Liste des contacts</h5>
+                        </div>
+
+                        <div class="input-group rounded  mt-2 d-flex justify-content-center">
+                            <input type="text" id="searchInput" style="max-width: 50%;" class="form-control" placeholder="Rechercher...">
+                            <span class="input-group-text border-0">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-2">
+                            <ul class="pagination pagination-circle" id="pagination">
+                                <li class="page-item" id="prevPage">
+                                    <a class="page-link" href="#">Précédent</a>
+                                </li>
+                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item" id="nextPage">
+                                    <a class="page-link" href="#">Suivant</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+
+                        <div class="card-body">
+                            <table class="table table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Genre</th>
+                                        <th>Prénom</th>
+                                        <th>Nom</th>
+                                        <th>Téléphone</th>
+                                        <th>Date Modification</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contactList"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
