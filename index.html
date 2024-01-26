@@ -11,12 +11,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 
-        <style>
-            body {
-                background-image: url("https://storage.pixteller.com/designs/designs-images/2019-03-27/05/simple-background-backgrounds-passion-simple-1-5c9b95bd34713.png");
-                background-size: cover;
-            }
-        </style>
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
     <body>
@@ -25,12 +20,11 @@
             <div class="row">
                 <div class="col">
                     <div class="card mb-4">
-                        <div class="card-header d-flex justify-content-between">
-                            <h5 class="mb-0">Ajout/Edition d'un contact</h5>
+                        <div class="card-header d-flex justify-content-center">
                             <button id="toggleForm" class="btn btn-success mb-3">Nouveau contact</button>
                         </div>
-                        <div class="card-body">
-                            <form id="contactForm" style="display:none;">
+                        <form id="contactForm" style="display:none;">
+                            <div class="card-body">
                                 <label for="gender" class="mt-2">Genre</label>
                                 <select name="gender" id="gender" class="form-select mt-2" required>
                                     <option value="Monsieur">Monsieur</option>
@@ -50,8 +44,8 @@
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="saveContact" class="btn btn-primary mt-4">Enregistrer</button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -90,7 +84,7 @@
                                         <th>Prénom</th>
                                         <th>Nom</th>
                                         <th>Téléphone</th>
-                                        <th>Date Modification</th>
+                                        <th>Modification</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -102,6 +96,6 @@
             </div>
         </div>
 
-        <script src="script.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
